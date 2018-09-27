@@ -1,10 +1,10 @@
 /*!
- * Theme Name: WPStart Base
+ * Theme Name: Crowdblink
  * Author: Nate Weller
  * Author URI: https://nateweller.com
- * Description: Base theme with build tools!
+ * Description: Custom theme for the Crowdblink marketing site.
  * Version: 1.0
- * Text Domain: wps
+ * Text Domain: cb
  */
 
 @import './vendor/bootstrap/scss/_functions.scss';
@@ -12,7 +12,14 @@
 @import 'variables';
 @import './vendor/bootstrap/scss/_reboot.scss';
 @import './vendor/bootstrap/scss/_reboot.scss';
-@import "./vendor/bootstrap/scss/_grid.scss";
-@import "./vendor/bootstrap/scss/_tables.scss";
-@import "./vendor/bootstrap/scss/_forms.scss";
-@import "./vendor/bootstrap/scss/_buttons.scss";
+@import './vendor/bootstrap/scss/_grid.scss';
+@import './vendor/bootstrap/scss/_tables.scss';
+@import './vendor/bootstrap/scss/_forms.scss';
+@import './vendor/bootstrap/scss/_buttons.scss';
+@import './vendor/bootstrap/scss/_card.scss';
+
+@import 'document';
+
+@import 'header';
+
+@import 'page-home';

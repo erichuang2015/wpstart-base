@@ -1,0 +1,68 @@
+<section class="steps" data-parallax="scroll" data-image-src="{{ TimberImage(post.get_field('steps_background')).src }}" data-speed="0.75">
+	<div class="container">
+		<h2 class="section-title">{{ post.steps_title }}</h2>
+		<div class="section-content">
+			<div class="steps-images">
+				<div class="row">
+					<div class="col-3">
+						<img src="{{ TimberImage(post.get_field('step_1_image')).src }}" alt="">
+					</div>
+					<div class="col-3">
+						<img src="{{ TimberImage(post.get_field('step_2_image')).src }}" alt="">
+					</div>
+					<div class="col-3">
+						<img src="{{ TimberImage(post.get_field('step_3_image')).src }}" alt="">
+					</div>
+					<div class="col-3">
+						<img src="{{ TimberImage(post.get_field('step_4_image')).src }}" alt="">
+					</div>
+				</div>
+			</div>
+			<div class="steps-text">
+				<div class="row">
+					<div class="col-6 col-md-3">
+						<h5>Step 1</h5>
+						<h6>{{ post.step_1_description }}</h6>
+					</div>
+					<div class="col-6 col-md-3">
+						<h5>Step 2</h5>
+						<h6>{{ post.step_2_description }}</h6>
+					</div>
+					<div class="col-6 col-md-3">
+						<h5>Step 3</h5>
+						<h6>{{ post.step_3_description }}</h6>
+					</div>
+					<div class="col-6 col-md-3">
+						<h5>Step 4</h5>
+						<h6>{{ post.step_4_description }}</h6>
+					</div>
+				</div>
+			</div>
+		</div>
+	</div>
+</section>
+
+<section class="upcoming-events">
+	<div class="container">
+		<div class="row">
+		{% for event in events %}
+			<div class="col-md-6 col-lg-4">
+				<div class="card">
+					<img src="{{ event.event_image ? event.event_image : '/wp-content/themes/crowdblink/images/default-thumbnail.jpg' }}" alt="{{ event.post_title }}" />
+					<div class="card-body">
+						<h3>{{ event.post_title }}</h3>
+						<span class="event-location">
+							{{ event.event_location }}
+							{{ event.event_location and event.event_region ? ', ' }}
+							{{ event.event_region }}
+						</span>
+						<span class="event-price">
+							{{ event.event_price }}
+						</span>
+					</div>
+				</div>
+			</div>
+		{% endfor %}
+		</div>
+	</div>
+</section>

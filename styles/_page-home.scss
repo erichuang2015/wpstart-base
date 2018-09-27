@@ -1,0 +1,118 @@
+body.home {
+
+	section.steps {
+		text-align: center;
+		color: white;
+		padding: 1.5rem 0 0;
+
+		@include media-breakpoint-up(md) {
+			padding: 3rem 0 0;
+		}
+
+		h2.section-title {
+			font-size: 2rem;
+			line-height: 1.2;
+			width: 18rem;
+			margin: 0 auto;
+
+			@include media-breakpoint-up(md) {
+				width: auto;
+				font-size: 3rem;
+			}
+
+			@include media-breakpoint-up(lg) {
+				font-size: 4rem;
+			}
+
+			@include media-breakpoint-up(xl) {
+				font-size: 4.2rem;
+			}
+
+		}
+
+		div.section-content {
+			position: relative;
+			z-index: 1;
+			bottom: -1.5rem;
+
+			@include media-breakpoint-up(md) {
+				bottom: -3rem;
+			}
+
+		}
+
+		div.steps-images {
+
+			.row {
+				margin-left: -6px;
+				margin-right: -6px;
+			}
+
+			.row > div {
+				position: relative;
+				display: flex;
+				padding-right: 6px;
+				padding-left: 6px;
+			}
+
+			img {
+				max-width: 100%;
+				margin: 0 auto;
+				align-self: flex-end;
+				user-select: none;
+				user-drag: none;
+
+				@include media-breakpoint-up(xl) {
+					width: 85%;
+				}
+				
+			}
+
+		}
+
+		div.steps-text {
+			background-color: $primary;
+			padding: 15px;
+
+			h5 {
+				color: $gray-900;
+				font-weight: 600;
+				margin: 0;
+
+				@include media-breakpoint-up(md) {
+					font-size: 1rem;
+				}
+
+				@include media-breakpoint-up(lg) {
+					font-size: 1.25rem;
+				}
+				
+			}
+
+			h6 {
+				font-weight: normal;
+				margin: 0;
+				line-break: 1.2;
+				
+				@include media-breakpoint-up(md) {
+					font-size: 1rem;
+				}
+
+				@include media-breakpoint-up(lg) {
+					font-size: 1.25rem;
+				}
+
+			}
+
+			@include media-breakpoint-down(md) {
+				.row > div:not(:last-child):not(:nth-last-child(2)) {
+					margin-bottom: 15px;
+				}
+			}
+
+		}
+
+
+	}
+
+}

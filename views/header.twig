@@ -10,11 +10,10 @@
 
 {% macro menuItem( item, post ) %}
     <li class="{{ _self.menuItemClasses( item, post ) }}">
-        {% if item.object_id == post.id %}
-            <span class="hidden">Current Page: </span>{{ item.title }}
-        {% else %}
-            <a href="{{ item.url }}">{{ item.title }}</a>
-        {% endif %}
+		<a href="{{ item.url }}">
+			<i class="{{ item.icon_class }}"></i>
+			{{ item.title }}
+		</a>
         {% if item.subMenu %}
             <ul class="sub-menu">
                 {% for menuItem in item.subMenu %}
@@ -26,16 +25,35 @@
 {% endmacro %}
 
 <header class="site-header">
-    <h1 class="site-title"><a href="{{ site.url }}">{{ site.title }}</a></h1>
-    <p class="site-description">{{ site.description }}</p>
-    {% if menu|length > 0 %}
-        <nav aria-labelledby="site-menu-label">
-            <h2 id="site-menu-label" class="hidden">Site Menu</h2>
-            <ul class="menu site-menu">
-                {% for menuItem in menu %}
-                    {{ _self.menuItem( menuItem, post ) }}
-                {% endfor %}
-            </ul>
-        </nav>
-    {% endif %}
+	<div class="container-fluid">
+		<div class="row">
+			<div class="col-auto">
+				<a href="{{ site.url }}" class="site-logo">
+					{% if logo %}
+						<img src="{{ logo[0] }}" alt="{{ site.title }}" />
+					{% else %}
+						<h1>{{ site.title }}</h1>
+					{% endif %}
+				</a> 
+			</div>
+			<div class="col">  
+				<div class="site-search">
+					<form>
+						<input type="text" name="s" placeholder="Search Events" />
+					</form>
+				</div>
+			</div>
+			<div class="col">
+				{% if menu|length > 0 %}
+					<nav class="site-menu-wrapper">
+						<ul class="menu site-menu">
+							{% for menuItem in menu %}
+								{{ _self.menuItem( menuItem, post ) }}
+							{% endfor %}
+						</ul>
+					</nav>
+				{% endif %}
+			</div>
+		</div>
+	</div>
 </header>

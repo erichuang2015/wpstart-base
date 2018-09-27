@@ -1,0 +1,53 @@
+.site-header {
+	height: 4rem;
+	line-height: 4rem;
+
+	.site-logo {
+		display: block;
+
+		img {
+			height: 2rem;
+			width: auto;
+		}
+
+	}
+
+	.site-search {
+
+		input {
+			border: 0;
+			margin: 0;
+			padding: 0 1.5rem;
+		}
+
+	}
+
+	.site-menu-wrapper {
+		float: right;
+	}
+
+	.site-menu {
+		list-style: none;
+		padding: 0;
+		margin: 0;
+		
+		.menu-item {
+			float: left;
+			border-right: 1px solid $gray-200;
+
+			&:first-child {
+				border-left: 1px solid $gray-200;
+			}
+
+			a {
+				display: block;
+				padding: 0 1.5rem;
+			}
+
+		}
+
+	}
+
+
+
+}

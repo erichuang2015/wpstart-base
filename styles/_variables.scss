@@ -47,7 +47,7 @@ $orange:  #fd7e14;
 $yellow:  #ffc107;
 $green:   #28a745;
 $teal:    #20c997;
-$cyan:    #17a2b8;
+$cyan:    #2FBCEC;
 
 $colors: ();
 $colors: map-merge((
@@ -66,7 +66,7 @@ $colors: map-merge((
   "gray-dark":  $gray-800
 ), $colors);
 
-$primary:       $blue;
+$primary:       $cyan;
 $secondary:     $gray-600;
 $success:       $green;
 $info:          $cyan;
@@ -195,7 +195,7 @@ $container-max-widths: (
   sm: 540px,
   md: 720px,
   lg: 960px,
-  xl: 1140px
+  xl: 990px
 );
 
 @include _assert-ascending($container-max-widths, "$container-max-widths");
@@ -265,8 +265,8 @@ $h5-font-size:                $font-size-base * 1.25;
 $h6-font-size:                $font-size-base;
 
 $headings-margin-bottom:      ($spacer / 2);
-$headings-font-family:        inherit;
-$headings-font-weight:        500;
+$headings-font-family:        Avenir, $font-family-base;
+$headings-font-weight:        900;
 $headings-line-height:        1.2;
 $headings-color:              inherit;
 
