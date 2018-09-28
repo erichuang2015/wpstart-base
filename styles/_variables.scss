@@ -94,6 +94,14 @@ $theme-color-interval:      8%;
 $yiq-text-dark: $gray-900;
 $yiq-text-light: $white;
 
+// Gradients
+@mixin cyan-gradient() {
+	background: $cyan; /* Old browsers */
+	background: -moz-linear-gradient(-45deg, #37c5f5 41%, #119ece 100%); /* FF3.6-15 */
+	background: -webkit-linear-gradient(-45deg, #37c5f5 41%,#119ece 100%); /* Chrome10-25,Safari5.1-6 */
+	background: linear-gradient(165deg, #37c5f5 20%,#119ece 100%); /* W3C, IE10+, FF16+, Chrome26+, Opera12+, Safari7+ */
+	filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#37c5f5', endColorstr='#119ece',GradientType=1 ); /* IE6-9 fallback on horizontal gradient */
+}
 
 // # # # # # # # # # # # # # # # # # # # #
 // # OPTIONS ~ * ~ * ~ * ~ * ~ * ~ * ~ * ~
@@ -194,8 +202,8 @@ $grid-breakpoints: (
 $container-max-widths: (
   sm: 540px,
   md: 720px,
-  lg: 960px,
-  xl: 990px
+  lg: 990px,
+  xl: 1140px
 );
 
 @include _assert-ascending($container-max-widths, "$container-max-widths");

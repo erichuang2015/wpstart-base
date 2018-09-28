@@ -1,13 +1,15 @@
 {% macro menuItemClasses( item, post) %}
     menu-item 
     {{ item.object_id == post.id ? 'current-page' }}
-    {{ item.subMenu ? 'menu-item-has-children' }}
+    {{ item.subMenu ? 'menu-item-has-children' }} 
+	{{ item.background_color ? 'bg-' ~ item.background_color }}
     {% for subItem in item.subMenu %}
         {{ subItem.object_id == post.id ? 'current-menu-parent' }}
     {% endfor %}
     {{ item.classes|join }}
 {% endmacro %}
 
+{# Recursive macro, for rendering infinite levels of sub-menus #}
 {% macro menuItem( item, post ) %}
     <li class="{{ _self.menuItemClasses( item, post ) }}">
 		<a href="{{ item.url }}">
@@ -25,9 +27,9 @@
 {% endmacro %}
 
 <header class="site-header">
-	<div class="container-fluid">
+	<div class="container">
 		<div class="row">
-			<div class="col-auto">
+			<div class="col-auto col-logo">
 				<a href="{{ site.url }}" class="site-logo">
 					{% if logo %}
 						<img src="{{ logo[0] }}" alt="{{ site.title }}" />
@@ -36,14 +38,15 @@
 					{% endif %}
 				</a> 
 			</div>
-			<div class="col">  
+			<div class="col pr-0">  
 				<div class="site-search">
+					<i class="search-icon fas fa-search"></i>
 					<form>
-						<input type="text" name="s" placeholder="Search Events" />
+						<input class="search-input" type="text" name="s" placeholder="Search Events" />
 					</form>
 				</div>
 			</div>
-			<div class="col">
+			<div class="col-auto pl-0">
 				{% if menu|length > 0 %}
 					<nav class="site-menu-wrapper">
 						<ul class="menu site-menu">

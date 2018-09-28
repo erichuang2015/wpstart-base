@@ -11,15 +11,18 @@
 @import './vendor/bootstrap/scss/_mixins.scss';
 @import 'variables';
 @import './vendor/bootstrap/scss/_reboot.scss';
-@import './vendor/bootstrap/scss/_reboot.scss';
+@import './vendor/bootstrap/scss/_type.scss';
 @import './vendor/bootstrap/scss/_grid.scss';
 @import './vendor/bootstrap/scss/_tables.scss';
 @import './vendor/bootstrap/scss/_forms.scss';
 @import './vendor/bootstrap/scss/_buttons.scss';
 @import './vendor/bootstrap/scss/_card.scss';
+@import './vendor/bootstrap/scss/utilities';
 
 @import 'document';
 
-@import 'header';
+@import 'components/site-header';
+@import 'components/page-header';
+@import 'components/slider';
 
 @import 'page-home';

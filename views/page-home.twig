@@ -1,4 +1,24 @@
-<section class="steps" data-parallax="scroll" data-image-src="{{ TimberImage(post.get_field('steps_background')).src }}" data-speed="0.75">
+{% if post.slides|length > 0 %}
+	<div class="slider">
+		{% for slide in post.get_field('slides') %}
+			<div class="slide"> {# slick will inject classes into this div #}
+				<div class="slide-background" style="background-image: url('{{ TimberImage(slide.background).src }}');"></div>
+				{% if slide.link %}
+					<a class="slide-link" href="{{ slide.link }}"></a>
+				{% endif %}
+				<div class="slide-content-wrapper">
+					<div class="slide-content">
+						{{ slide.content }}
+					</div>
+				</div>
+			</div>
+		{% endfor %}
+	</div>
+{% endif %}
+
+</section>
+
+<section class="steps" {# data-parallax="scroll" data-image-src="{{ TimberImage(post.get_field('steps_background')).src }}" data-speed="0.85" #} style="background-image: url('{{ TimberImage(post.get_field('steps_background')).src }}');">
 	<div class="container">
 		<h2 class="section-title">{{ post.steps_title }}</h2>
 		<div class="section-content">

@@ -9,6 +9,137 @@ h1, h2, h3, h4, h5, h6,
 	text-transform: uppercase;
 }
 
+main {
+	h1, h2, h3, h4, h5, h6,
+	.h1, .h2, .h3, .h4, .h5, .h6 {
+		clear: both;
+	}
+}
+
 img {
 	max-width: 100%;
+}
+
+// Default WP Alignment Classes
+
+.alignleft {
+    float: left;
+    margin: 0 1rem 1.5rem 0;
+}
+
+.aligncenter {
+    display: block;
+    margin: 0 auto 1.5rem auto;
+}
+
+.alignright {
+    float: right;
+    margin: 0 0 1.5rem 1rem;
+}
+
+.alignnone {
+    float: none;
+    display:block;
+    margin: 0 0 1.5rem 0;
+}
+
+.size-full {
+    margin: 0 0 1.5rem 0;
+}
+
+p .alignleft {
+    float: left;
+    margin: 5px 1rem 1.5rem 0;
+}
+
+p .aligncenter {
+    display: block;
+    margin: 5px auto 1.5rem auto;
+}
+
+p .alignright {
+    float: right;
+    margin: 5px 0 1.5rem 1rem;
+}
+
+p .alignnone {
+    float: none;
+    display:block;
+    margin: 1.5rem 0;
+}
+
+p .size-full {
+    width:100%;
+    height:auto;
+    margin: 1.5rem 0;
+}
+
+.wp-caption {
+    padding: 5px 0;
+    border: 1px solid #555;
+    background: #444;
+    text-align: center;
+}
+
+.wp-caption img {
+    display: inline;
+}
+
+.wp-caption p.wp-caption-text {
+    margin: 5px 0 0;
+    padding: 0;
+    text-align: center;
+    font-size: 75%;
+    font-weight: 100;
+    font-style: italic;
+    color: #ddd;
+}
+
+// end WP 
+
+table {
+	width: 100%;
+	max-width: 100%;
+	margin-bottom: $spacer;
+	background-color: $table-bg; // Reset for nesting within parents with `background-color`.
+  
+	th,
+	td {
+	  padding: $table-cell-padding;
+	  vertical-align: top;
+	  border-top: $table-border-width solid $table-border-color;
+	}
+  
+	thead th {
+	  vertical-align: bottom;
+	  border-bottom: (2 * $table-border-width) solid $table-border-color;
+	}
+  
+	tbody + tbody {
+	  border-top: (2 * $table-border-width) solid $table-border-color;
+	}
+  
+	table {
+	  background-color: $body-bg;
+	}
+
+}
+
+code {
+	background-color: $gray-200;
+	padding: 2px 4px;
+	border-radius: 2px;
+}
+
+blockquote {
+	@include cyan-gradient();
+	color: white;
+	padding: 1rem;
+	margin-bottom: 1rem;
+	border-radius: 2px;
+
+	:last-child {
+		margin-bottom: 0;
+	}
+
 }

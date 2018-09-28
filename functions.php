@@ -26,14 +26,22 @@ add_theme_support( 'post-thumbnails' );
 
 // CSS
 function cb_styles () {
+	wp_enqueue_style( 'cb-raleway', 'https://fonts.googleapis.com/css?family=Raleway:800' );
+	wp_enqueue_style( 'cb-fontawesome', 'https://use.fontawesome.com/releases/v5.3.1/css/all.css' );
+	wp_enqueue_style( 'caa-slick', '//cdn.jsdelivr.net/npm/slick-carousel@1.8.1/slick/slick.css' );
+	wp_enqueue_style( 'caa-slick-theme', '//cdn.jsdelivr.net/npm/slick-carousel@1.8.1/slick/slick-theme.css' );
     wp_enqueue_style( 'style', DIR_URI . '/style.css' );
 }
 
 add_action( 'wp_enqueue_scripts', 'cb_styles' );
 
+add_editor_style( DIR_URI . '/admin-style.css' );
+
 // Javascript
 function cb_scripts () {
+	wp_enqueue_script( 'caa-slick', '//cdn.jsdelivr.net/npm/slick-carousel@1.8.1/slick/slick.min.js', [], '1.8.1', true);
 	wp_enqueue_script( 'cb-parallax', 'https://cdnjs.cloudflare.com/ajax/libs/parallax.js/1.5.0/parallax.min.js', ['jquery'], '1.5.0', true );
+	wp_enqueue_script( 'cb-main', DIR_URI . '/scripts/main-min.js', ['jquery'], '1', true );
 }
 
 add_action( 'wp_enqueue_scripts', 'cb_scripts' );
@@ -43,6 +51,12 @@ remove_action( 'wp_head', 'print_emoji_detection_script', 7 );
 remove_action( 'wp_print_styles', 'print_emoji_styles' );
 remove_action( 'admin_print_scripts', 'print_emoji_detection_script' );
 remove_action( 'admin_print_styles', 'print_emoji_styles' );
+
+// Prevent images from being wrapped inside paragraphs
+function filter_ptags_on_images($content){
+	return preg_replace('/<p>\s*(<a .*>)?\s*(<img .* \/>)\s*(\/a>)?\s*<\/p>/iU', '\1\2\3', $content);
+}
+add_filter('the_content', 'filter_ptags_on_images');
 
 # # # # # # # # # # # # # # # # # # # #
 # PAGE TITLES ~ * ~ * ~ * ~ * ~ * ~ * ~
@@ -55,7 +69,7 @@ function custom_page_title () {
     if ( is_404() )         return 'Error 404 Not Found';
     if ( is_category() )    return 'Category Archive for ' . single_cat_title();
     if ( is_tag() )         return 'Tag Archive for ' . single_tag_title();
-    if ( is_search() )      return 'Search Results for ' . wp_specialchars( $s );
+    if ( is_search() )      return 'Search Results for ' . esc_html( $_GET['s'] );
     return get_the_title();
 }
 

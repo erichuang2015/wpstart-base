@@ -1,0 +1,228 @@
+h1, h2, h3, h4, h5, h6,
+.h1, .h2, .h3, .h4, .h5, .h6 {
+  margin-bottom: 0.5rem;
+  font-family: Avenir, -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "Helvetica Neue", Arial, sans-serif, "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol";
+  font-weight: 900;
+  line-height: 1.2;
+  color: inherit; }
+
+h1, .h1 {
+  font-size: 2.5rem; }
+
+h2, .h2 {
+  font-size: 2rem; }
+
+h3, .h3 {
+  font-size: 1.75rem; }
+
+h4, .h4 {
+  font-size: 1.5rem; }
+
+h5, .h5 {
+  font-size: 1.25rem; }
+
+h6, .h6 {
+  font-size: 1rem; }
+
+.lead {
+  font-size: 1.25rem;
+  font-weight: 300; }
+
+.display-1 {
+  font-size: 6rem;
+  font-weight: 300;
+  line-height: 1.2; }
+
+.display-2 {
+  font-size: 5.5rem;
+  font-weight: 300;
+  line-height: 1.2; }
+
+.display-3 {
+  font-size: 4.5rem;
+  font-weight: 300;
+  line-height: 1.2; }
+
+.display-4 {
+  font-size: 3.5rem;
+  font-weight: 300;
+  line-height: 1.2; }
+
+hr {
+  margin-top: 1rem;
+  margin-bottom: 1rem;
+  border: 0;
+  border-top: 1px solid rgba(0, 0, 0, 0.1); }
+
+small,
+.small {
+  font-size: 80%;
+  font-weight: 400; }
+
+mark,
+.mark {
+  padding: 0.2em;
+  background-color: #fcf8e3; }
+
+.list-unstyled {
+  padding-left: 0;
+  list-style: none; }
+
+.list-inline {
+  padding-left: 0;
+  list-style: none; }
+
+.list-inline-item {
+  display: inline-block; }
+  .list-inline-item:not(:last-child) {
+    margin-right: 0.5rem; }
+
+.initialism {
+  font-size: 90%;
+  text-transform: uppercase; }
+
+.blockquote {
+  margin-bottom: 1rem;
+  font-size: 1.25rem; }
+
+.blockquote-footer {
+  display: block;
+  font-size: 80%;
+  color: #868e96; }
+  .blockquote-footer::before {
+    content: "\2014 \00A0"; }
+
+/*
+ * Typography, image, and content styles
+ */
+h1, h2, h3, h4, h5, h6,
+.h1, .h2, .h3, .h4, .h5, .h6 {
+  font-family: Avenir, -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "Helvetica Neue", Arial, sans-serif, "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol";
+  font-weight: 900;
+  text-transform: uppercase; }
+
+main h1, main h2, main h3, main h4, main h5, main h6,
+main .h1, main .h2, main .h3, main .h4, main .h5, main .h6 {
+  clear: both; }
+
+img {
+  max-width: 100%; }
+
+.alignleft {
+  float: left;
+  margin: 0 1rem 1.5rem 0; }
+
+.aligncenter {
+  display: block;
+  margin: 0 auto 1.5rem auto; }
+
+.alignright {
+  float: right;
+  margin: 0 0 1.5rem 1rem; }
+
+.alignnone {
+  float: none;
+  display: block;
+  margin: 0 0 1.5rem 0; }
+
+.size-full {
+  margin: 0 0 1.5rem 0; }
+
+p .alignleft {
+  float: left;
+  margin: 5px 1rem 1.5rem 0; }
+
+p .aligncenter {
+  display: block;
+  margin: 5px auto 1.5rem auto; }
+
+p .alignright {
+  float: right;
+  margin: 5px 0 1.5rem 1rem; }
+
+p .alignnone {
+  float: none;
+  display: block;
+  margin: 1.5rem 0; }
+
+p .size-full {
+  width: 100%;
+  height: auto;
+  margin: 1.5rem 0; }
+
+.wp-caption {
+  padding: 5px 0;
+  border: 1px solid #555;
+  background: #444;
+  text-align: center; }
+
+.wp-caption img {
+  display: inline; }
+
+.wp-caption p.wp-caption-text {
+  margin: 5px 0 0;
+  padding: 0;
+  text-align: center;
+  font-size: 75%;
+  font-weight: 100;
+  font-style: italic;
+  color: #ddd; }
+
+table {
+  width: 100%;
+  max-width: 100%;
+  margin-bottom: 1rem;
+  background-color: transparent; }
+  table th,
+  table td {
+    padding: 0.75rem;
+    vertical-align: top;
+    border-top: 1px solid #e9ecef; }
+  table thead th {
+    vertical-align: bottom;
+    border-bottom: 2px solid #e9ecef; }
+  table tbody + tbody {
+    border-top: 2px solid #e9ecef; }
+  table table {
+    background-color: #fff; }
+
+code {
+  background-color: #e9ecef;
+  padding: 2px 4px;
+  border-radius: 2px; }
+
+blockquote {
+  background: #2FBCEC;
+  /* Old browsers */
+  background: -moz-linear-gradient(-45deg, #37c5f5 41%, #119ece 100%);
+  /* FF3.6-15 */
+  background: -webkit-linear-gradient(-45deg, #37c5f5 41%, #119ece 100%);
+  /* Chrome10-25,Safari5.1-6 */
+  background: linear-gradient(165deg, #37c5f5 20%, #119ece 100%);
+  /* W3C, IE10+, FF16+, Chrome26+, Opera12+, Safari7+ */
+  filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#37c5f5', endColorstr='#119ece',GradientType=1 );
+  /* IE6-9 fallback on horizontal gradient */
+  color: white;
+  padding: 1rem;
+  margin-bottom: 1rem;
+  border-radius: 2px; }
+  blockquote :last-child {
+    margin-bottom: 0; }
+
+html {
+  max-width: 1110px;
+  margin: 0 auto; }
+
+body {
+  margin: 24px; }
+
+h1, h2, h3, h4, h5, h6,
+.h1, .h2, .h3, .h4, .h5, .h6 {
+  clear: both;
+  margin-top: 0; }
+
+body {
+  font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "Helvetica Neue", Arial, sans-serif, "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol"; }
+
+p {
+  margin-top: 0; }

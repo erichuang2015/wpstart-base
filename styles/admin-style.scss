@@ -1,0 +1,29 @@
+@import './vendor/bootstrap/scss/_functions.scss';
+@import './vendor/bootstrap/scss/_mixins.scss';
+@import 'variables';
+@import './vendor/bootstrap/scss/_type.scss';
+
+@import 'document';
+
+html {
+	max-width: 1110px;
+	margin: 0 auto;
+}
+
+body {
+	margin: 24px;
+}
+
+h1, h2, h3, h4, h5, h6,
+.h1, .h2, .h3, .h4, .h5, .h6 {
+	clear: both;
+	margin-top: 0;
+}
+
+body {
+	font-family: $font-family-base;
+}
+
+p {
+	margin-top: 0;
+}
