@@ -3,6 +3,7 @@
     {{ item.object_id == post.id ? 'current-page' }}
     {{ item.subMenu ? 'menu-item-has-children' }} 
 	{{ item.background_color ? 'bg-' ~ item.background_color }}
+	{{ item.mobile_position == 'menu' ? 'mobile-menu-item' }} 
     {% for subItem in item.subMenu %}
         {{ subItem.object_id == post.id ? 'current-menu-parent' }}
     {% endfor %}
@@ -29,7 +30,7 @@
 <header class="site-header">
 	<div class="container">
 		<div class="row">
-			<div class="col-auto col-logo">
+			<div class="col-6 col-md-auto col-logo">
 				<a href="{{ site.url }}" class="site-logo">
 					{% if logo %}
 						<img src="{{ logo[0] }}" alt="{{ site.title }}" />
@@ -38,15 +39,22 @@
 					{% endif %}
 				</a> 
 			</div>
-			<div class="col pr-0">  
+			<div class="col-6 d-md-none">
+				<span class="nav-toggle">
+					<span></span>
+					<span></span>
+					<span></span>
+				</span>
+			</div>
+			<div class="col-12 col-md pr-md-0 col-search">  
 				<div class="site-search">
 					<i class="search-icon fas fa-search"></i>
-					<form>
+					<form action="{{ site.url }}" method="get">
 						<input class="search-input" type="text" name="s" placeholder="Search Events" />
 					</form>
 				</div>
 			</div>
-			<div class="col-auto pl-0">
+			<div class="col-12 col-md-auto pl-0 col-menu">
 				{% if menu|length > 0 %}
 					<nav class="site-menu-wrapper">
 						<ul class="menu site-menu">

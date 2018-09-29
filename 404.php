@@ -1,1 +1,1 @@
-<?php render_template(); ?>
+<?php render_template( 'template-404' ); ?>

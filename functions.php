@@ -24,6 +24,12 @@ add_theme_support( 'custom-logo' );
 // Support Featured Image
 add_theme_support( 'post-thumbnails' ); 
 
+// Footer Options Page
+acf_add_options_page([
+	'page_title' => 'Site Footer',
+	'position' => 61
+]);
+
 // CSS
 function cb_styles () {
 	wp_enqueue_style( 'cb-raleway', 'https://fonts.googleapis.com/css?family=Raleway:800' );

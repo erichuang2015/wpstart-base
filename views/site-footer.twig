@@ -1,0 +1,28 @@
+        <footer class="site-footer">
+			<div class="container">
+				<div class="row justify-content-center">
+					<div class="col-auto">
+						<img src="{{ TimberImage(footer_logo).src }}" alt="P3" />
+					</div>
+					<div class="col-auto">
+						{% for app in apps %}
+							<div class="app">
+								<img class="app-icon" src="{{ TimberImage(app.icon).src }}" alt="{{ app.name }}" />
+								<h6 class="app-name">{{ app.name }}</h6>
+							</div>
+						{% endfor %}
+					</div>
+					<div class="col-auto">
+						<ul class="feature-list">
+							{% for feature in features %}
+								<li class="feature">{{ feature.feature }}</li>
+							{% endfor %}
+						</ul>
+					</div>
+				</div>
+			</div>
+        </footer>
+        {{ wp_footer }}
+        {{ debugger }}
+    </body>
+</html>

@@ -2,10 +2,13 @@ $header-height: 4rem;
 $header-border-color: $gray-200;
 
 .site-header {
-	height: $header-height;
 	line-height: $header-height;
 	background-color: white;
 	overflow-y: hidden;
+
+	@include media-breakpoint-up(md) {
+		height: $header-height;
+	}
 
 	.col-logo {
 		border-right: 1px solid $header-border-color;
@@ -16,8 +19,75 @@ $header-border-color: $gray-200;
 		margin-right: .5rem;
 
 		img {
-			height: 2rem;
+			height: auto;
 			width: auto;
+			max-width: 100%;
+			max-height: 2rem;
+		}
+
+	}
+
+	// https://codepen.io/KendallWhitman/pen/EKrrLQ
+	.nav-toggle {
+		$animation-speed: .5s;
+		position: absolute;
+		top: 1.4rem;
+		right: 1rem;
+		display: inline-block;
+		transition: transform $animation-speed;
+		z-index: 100;
+
+		@include media-breakpoint-up(md) {
+			display: none;
+		}
+
+		&:hover {
+			cursor: pointer;
+		}
+
+		> * {
+			border-top: 4px solid $gray-900;
+			border-radius: 2px;
+			display: block;
+			transition: margin $animation-speed, transform $animation-speed;
+			width: 1.75rem;
+		}
+
+		:nth-child(2) {
+			margin: 4px 0;
+		}
+
+		&.-toggled {
+			padding: .45rem 0;
+			transform: rotate(180deg);
+			transition: transform $animation-speed;
+
+			> * {
+				border-color: $gray-900;
+			}
+
+			:nth-child(1) {
+				transform: rotate(45deg);
+			}
+
+			:nth-child(2) {
+				margin: -4px 0;
+				opacity: 0;
+			}
+
+			:nth-child(3) {
+				transform: rotate(-45deg);
+			}
+
+		}
+		
+	}
+
+	.col-search {
+		border-top: 1px solid #EEE;
+
+		@include media-breakpoint-up(md) {
+			border: none;
 		}
 
 	}
@@ -35,7 +105,8 @@ $header-border-color: $gray-200;
 
 		.search-input {
 			width: 100%;
-			border: 0;
+			border: none;
+			outline: none;
 			margin: 0;
 			padding: 0 1.5rem 0 2rem;
 			position: relative;
@@ -49,18 +120,44 @@ $header-border-color: $gray-200;
 
 	}
 
+	.col-menu {
+		
+		@include media-breakpoint-down(sm) {
+			padding-right: 0;
+		}
+
+	}
+
 	.site-menu-wrapper {
-		float: right;
+
+		@include media-breakpoint-up(md) {
+			float: right;
+		}
+
 	}
 
 	.site-menu {
+		width: 100%;
 		list-style: none;
 		padding: 0;
 		margin: 0;
+
+		@include media-breakpoint-up(md) {
+			width: auto;
+		}
 		
 		.menu-item {
+			text-align: center;
+			width: 50%;
 			float: left;
 			border-right: 1px solid $header-border-color;
+			border-top: 1px solid $header-border-color;
+
+			@include media-breakpoint-up(md) {
+				text-align: left;
+				width: auto;
+				border-top: none;
+			}
 
 			&:first-child {
 				border-left: 1px solid $header-border-color;
@@ -90,6 +187,7 @@ $header-border-color: $gray-200;
 
 			&.bg-blue  {
 				border-right: none;
+				border-top-color: $cyan;
 				
 				a {
 					@include cyan-gradient();
@@ -98,7 +196,20 @@ $header-border-color: $gray-200;
 
 			}
 
+			&.mobile-menu-item {
+				display: none;
+
+				@include media-breakpoint-up(md) {
+					display: block;
+				}
+
+			}
+
 		}
+
+		// &.-toggled .menu-item.mobile-menu-item {
+		// 	display: block;
+		// }
 
 	}
 

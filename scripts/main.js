@@ -2,6 +2,14 @@
 
 	'use strict';
 
+	// mobile navigation toggling
+	$('.nav-toggle').on('click', function () {
+		$(this).toggleClass('-toggled');
+		// $('.site-menu').toggleClass('-toggled');
+		$('.site-menu .mobile-menu-item').slideToggle();
+	});
+
+	// slider
 	$('.slider').slick({
 		autoplay: true,
 		arrows: true,

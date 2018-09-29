@@ -1,0 +1,46 @@
+.site-footer {
+	background-image: url('images/default-background.jpg');
+	background-size: cover;
+	background-position: center center;
+	background-repeat: no-repeat;
+	padding: 4.5rem 0;
+	color: white;
+
+	.app {
+		display: inline-block;
+		text-align: center;
+		margin: 0 .75rem;
+
+		.app-icon {
+			margin-bottom: .5rem;
+			height: 5.5rem;
+			width: auto;
+		}
+
+		.app-name {
+			font-weight: normal;
+			text-shadow: 1px 1px 2px black;
+			font-size: .875rem;
+			letter-spacing: .075rem;
+		}
+
+	}
+
+	.feature-list {
+		list-style: none;
+		margin: 0;
+		padding: 0;
+
+		.feature {
+			font-family: $headings-font-family;
+			text-transform: uppercase;
+			font-weight: bold;
+			letter-spacing: .2rem;
+			font-size: 0.785rem;
+			margin-bottom: 1rem;
+			text-shadow: 1px 2px 0px black;
+		}
+
+	}
+
+}

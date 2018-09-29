@@ -252,6 +252,19 @@
 		"oS": 0,
 		"uL": 1
 		},
+	"/styles/components/_site-footer.scss": {
+		"aP": 0,
+		"bl": 0,
+		"dP": 10,
+		"dS": 0,
+		"ft": 4,
+		"ma": 0,
+		"oA": 1,
+		"oAP": "/styles/components/_site-footer.css",
+		"oF": 0,
+		"oS": 0,
+		"uL": 1
+		},
 	"/styles/components/_site-header.scss": {
 		"aP": 0,
 		"bl": 0,
@@ -5167,53 +5180,32 @@
 		"sC": 3,
 		"tS": 0
 		},
-	"/views/404.twig": {
-		"cB": 0,
-		"ft": 8192,
-		"oA": 0,
-		"oAP": "/views/404.twig",
-		"oF": 0
-		},
-	"/views/_pagination.twig": {
+	"/views/components/_event-card.twig": {
 		"cB": 0,
 		"ft": 8192,
 		"oA": 1,
-		"oAP": "/views/_pagination.twig",
+		"oAP": "/views/components/_event-card.twig",
 		"oF": 0
 		},
-	"/views/_posts.twig": {
+	"/views/components/_pagination.twig": {
 		"cB": 0,
 		"ft": 8192,
 		"oA": 1,
-		"oAP": "/views/_posts.twig",
+		"oAP": "/views/components/_pagination.twig",
 		"oF": 0
 		},
-	"/views/footer.twig": {
+	"/views/components/_posts.twig": {
+		"cB": 0,
+		"ft": 8192,
+		"oA": 1,
+		"oAP": "/views/components/_posts.twig",
+		"oF": 0
+		},
+	"/views/layout-container.twig": {
 		"cB": 0,
 		"ft": 8192,
 		"oA": 0,
-		"oAP": "/views/footer.twig",
-		"oF": 0
-		},
-	"/views/head.twig": {
-		"cB": 0,
-		"ft": 8192,
-		"oA": 0,
-		"oAP": "/views/head.twig",
-		"oF": 0
-		},
-	"/views/header.twig": {
-		"cB": 0,
-		"ft": 8192,
-		"oA": 0,
-		"oAP": "/views/header.twig",
-		"oF": 0
-		},
-	"/views/index.twig": {
-		"cB": 0,
-		"ft": 8192,
-		"oA": 0,
-		"oAP": "/views/index.twig",
+		"oAP": "/views/layout-container.twig",
 		"oF": 0
 		},
 	"/views/page-home.twig": {
@@ -5223,11 +5215,46 @@
 		"oAP": "/views/page-home.twig",
 		"oF": 0
 		},
-	"/views/search.twig": {
+	"/views/site-footer.twig": {
 		"cB": 0,
 		"ft": 8192,
 		"oA": 0,
-		"oAP": "/views/search.twig",
+		"oAP": "/views/site-footer.twig",
+		"oF": 0
+		},
+	"/views/site-head.twig": {
+		"cB": 0,
+		"ft": 8192,
+		"oA": 0,
+		"oAP": "/views/site-head.twig",
+		"oF": 0
+		},
+	"/views/site-header.twig": {
+		"cB": 0,
+		"ft": 8192,
+		"oA": 0,
+		"oAP": "/views/site-header.twig",
+		"oF": 0
+		},
+	"/views/template-404.twig": {
+		"cB": 0,
+		"ft": 8192,
+		"oA": 0,
+		"oAP": "/views/template-404.twig",
+		"oF": 0
+		},
+	"/views/template-index.twig": {
+		"cB": 0,
+		"ft": 8192,
+		"oA": 0,
+		"oAP": "/views/template-index.twig",
+		"oF": 0
+		},
+	"/views/template-search.twig": {
+		"cB": 0,
+		"ft": 8192,
+		"oA": 0,
+		"oAP": "/views/template-search.twig",
 		"oF": 0
 		}
 	},

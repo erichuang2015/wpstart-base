@@ -1,10 +1,14 @@
 <main>
 	<header class="page-header" data-parallax="scroll" data-image-src="{{ theme.link }}/images/default-background.jpg" data-speed="0.85">
 		<div class="container">
-			<h1>{{ page_title }}</h1>
+			{% block header %}
+				<h1>{{ page_title }}</h1>
+			{% endblock %}
 		</div>
 	</header>
 	<div class="container">
-		{{ post.content }}
+		{% block content %}
+			{{ post.content }}
+		{% endblock %}
 	</div>
 </main>

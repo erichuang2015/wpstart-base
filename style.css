@@ -3928,6 +3928,9 @@ a.text-dark:focus, a.text-dark:hover {
 /*
  * Typography, image, and content styles
  */
+body {
+  overflow-x: hidden; }
+
 h1, h2, h3, h4, h5, h6,
 .h1, .h2, .h3, .h4, .h5, .h6 {
   font-family: Avenir, -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "Helvetica Neue", Arial, sans-serif, "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol";
@@ -4041,18 +4044,69 @@ blockquote {
     margin-bottom: 0; }
 
 .site-header {
-  height: 4rem;
   line-height: 4rem;
   background-color: white;
   overflow-y: hidden; }
+  @media (min-width: 768px) {
+    .site-header {
+      height: 4rem; } }
   .site-header .col-logo {
     border-right: 1px solid #e9ecef; }
   .site-header .site-logo {
     display: block;
     margin-right: .5rem; }
     .site-header .site-logo img {
-      height: 2rem;
-      width: auto; }
+      height: auto;
+      width: auto;
+      max-width: 100%;
+      max-height: 2rem; }
+  .site-header .nav-toggle {
+    position: absolute;
+    top: 1.4rem;
+    right: 1rem;
+    display: inline-block;
+    transition: -webkit-transform 0.5s;
+    transition: transform 0.5s;
+    transition: transform 0.5s, -webkit-transform 0.5s;
+    z-index: 100; }
+    @media (min-width: 768px) {
+      .site-header .nav-toggle {
+        display: none; } }
+    .site-header .nav-toggle:hover {
+      cursor: pointer; }
+    .site-header .nav-toggle > * {
+      border-top: 4px solid #212529;
+      border-radius: 2px;
+      display: block;
+      transition: margin 0.5s, -webkit-transform 0.5s;
+      transition: margin 0.5s, transform 0.5s;
+      transition: margin 0.5s, transform 0.5s, -webkit-transform 0.5s;
+      width: 1.75rem; }
+    .site-header .nav-toggle :nth-child(2) {
+      margin: 4px 0; }
+    .site-header .nav-toggle.-toggled {
+      padding: .45rem 0;
+      -webkit-transform: rotate(180deg);
+              transform: rotate(180deg);
+      transition: -webkit-transform 0.5s;
+      transition: transform 0.5s;
+      transition: transform 0.5s, -webkit-transform 0.5s; }
+      .site-header .nav-toggle.-toggled > * {
+        border-color: #212529; }
+      .site-header .nav-toggle.-toggled :nth-child(1) {
+        -webkit-transform: rotate(45deg);
+                transform: rotate(45deg); }
+      .site-header .nav-toggle.-toggled :nth-child(2) {
+        margin: -4px 0;
+        opacity: 0; }
+      .site-header .nav-toggle.-toggled :nth-child(3) {
+        -webkit-transform: rotate(-45deg);
+                transform: rotate(-45deg); }
+  .site-header .col-search {
+    border-top: 1px solid #EEE; }
+    @media (min-width: 768px) {
+      .site-header .col-search {
+        border: none; } }
   .site-header .site-search {
     position: relative;
     font-size: 0.875rem; }
@@ -4063,7 +4117,8 @@ blockquote {
       z-index: 0; }
     .site-header .site-search .search-input {
       width: 100%;
-      border: 0;
+      border: none;
+      outline: none;
       margin: 0;
       padding: 0 1.5rem 0 2rem;
       position: relative;
@@ -4076,15 +4131,31 @@ blockquote {
         text-transform: uppercase; }
       .site-header .site-search .search-input::placeholder {
         text-transform: uppercase; }
-  .site-header .site-menu-wrapper {
-    float: right; }
+  @media (max-width: 767.99px) {
+    .site-header .col-menu {
+      padding-right: 0; } }
+  @media (min-width: 768px) {
+    .site-header .site-menu-wrapper {
+      float: right; } }
   .site-header .site-menu {
+    width: 100%;
     list-style: none;
     padding: 0;
     margin: 0; }
+    @media (min-width: 768px) {
+      .site-header .site-menu {
+        width: auto; } }
     .site-header .site-menu .menu-item {
+      text-align: center;
+      width: 50%;
       float: left;
-      border-right: 1px solid #e9ecef; }
+      border-right: 1px solid #e9ecef;
+      border-top: 1px solid #e9ecef; }
+      @media (min-width: 768px) {
+        .site-header .site-menu .menu-item {
+          text-align: left;
+          width: auto;
+          border-top: none; } }
       .site-header .site-menu .menu-item:first-child {
         border-left: 1px solid #e9ecef; }
       .site-header .site-menu .menu-item a {
@@ -4103,7 +4174,8 @@ blockquote {
           margin-right: 4px;
           bottom: -1px; }
       .site-header .site-menu .menu-item.bg-blue {
-        border-right: none; }
+        border-right: none;
+        border-top-color: #2FBCEC; }
         .site-header .site-menu .menu-item.bg-blue a {
           background: #2FBCEC;
           /* Old browsers */
@@ -4114,6 +4186,11 @@ blockquote {
           filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#37c5f5', endColorstr='#119ece',GradientType=1 );
           /* IE6-9 fallback on horizontal gradient */
           color: white; }
+      .site-header .site-menu .menu-item.mobile-menu-item {
+        display: none; }
+        @media (min-width: 768px) {
+          .site-header .site-menu .menu-item.mobile-menu-item {
+            display: block; } }
 
 .page-header {
   padding: 3rem 0;
@@ -4168,6 +4245,39 @@ blockquote {
 
 .slider:hover .slick-next {
   right: 1rem; }
+
+.site-footer {
+  background-image: url("images/default-background.jpg");
+  background-size: cover;
+  background-position: center center;
+  background-repeat: no-repeat;
+  padding: 4.5rem 0;
+  color: white; }
+  .site-footer .app {
+    display: inline-block;
+    text-align: center;
+    margin: 0 .75rem; }
+    .site-footer .app .app-icon {
+      margin-bottom: .5rem;
+      height: 5.5rem;
+      width: auto; }
+    .site-footer .app .app-name {
+      font-weight: normal;
+      text-shadow: 1px 1px 2px black;
+      font-size: .875rem;
+      letter-spacing: .075rem; }
+  .site-footer .feature-list {
+    list-style: none;
+    margin: 0;
+    padding: 0; }
+    .site-footer .feature-list .feature {
+      font-family: Avenir, -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "Helvetica Neue", Arial, sans-serif, "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol";
+      text-transform: uppercase;
+      font-weight: bold;
+      letter-spacing: .2rem;
+      font-size: 0.785rem;
+      margin-bottom: 1rem;
+      text-shadow: 1px 2px 0px black; }
 
 body.home section.steps {
   background-color: #212529;

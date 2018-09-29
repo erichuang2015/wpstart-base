@@ -67,20 +67,7 @@
 		<div class="row">
 		{% for event in events %}
 			<div class="col-md-6 col-lg-4">
-				<div class="card">
-					<img src="{{ event.event_image ? event.event_image : '/wp-content/themes/crowdblink/images/default-thumbnail.jpg' }}" alt="{{ event.post_title }}" />
-					<div class="card-body">
-						<h3>{{ event.post_title }}</h3>
-						<span class="event-location">
-							{{ event.event_location }}
-							{{ event.event_location and event.event_region ? ', ' }}
-							{{ event.event_region }}
-						</span>
-						<span class="event-price">
-							{{ event.event_price }}
-						</span>
-					</div>
-				</div>
+				{% include 'components/_event-card.twig' %}
 			</div>
 		{% endfor %}
 		</div>
