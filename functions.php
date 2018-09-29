@@ -7,7 +7,7 @@
 define( 'DIR', get_stylesheet_directory() );
 define( 'DIR_URI', get_stylesheet_directory_uri() );
 define( 'ENV', 'development' );
-$state = [];
+$state = []; // global template variables
 
 # # # # # # # # # # # # # # # # # # # #
 # INCLUDES ~ * ~ * ~ * ~ * ~ * ~ * ~ * 
@@ -27,7 +27,7 @@ add_theme_support( 'post-thumbnails' );
 // Footer Options Page
 acf_add_options_page([
 	'page_title' => 'Site Footer',
-	'position' => 61
+	'position' => 30
 ]);
 
 // CSS
@@ -41,6 +41,7 @@ function cb_styles () {
 
 add_action( 'wp_enqueue_scripts', 'cb_styles' );
 
+// Match TinyMCE editor to front end style
 add_editor_style( DIR_URI . '/admin-style.css' );
 
 // Javascript
@@ -90,26 +91,13 @@ function cb_register_nav_menus () {
 
 add_action( 'after_setup_theme', 'cb_register_nav_menus' );
 
-// function cb_wp_nav_menu_objects ( $items, $args ) {
-// 	foreach ( $items as &$item ) {
-// 		$icon_classes = get_field('icon_class', $item);
-// 		if ( $icon_classes ) {
-// 			$item->title = "<i class='$icon_classes'></i> $item->title";	
-// 		}
-// 		$item->title = 'Hello';
-// 	}
-// 	return $items;
-// }
-
-// add_filter('wp_get_nav_menu_items', 'cb_wp_nav_menu_objects', 10, 2);
-
 # # # # # # # # # # # # # # # # # # # #
 # CUSTOM POST TYPES ~ * ~ * ~ * ~ * ~ *
 # # # # # # # # # # # # # # # # # # # #
 
 function cb_register_cpt_event() {
 
-	$labels = array(
+	$labels = [
 		'name'                  => _x( 'Events', 'Post Type General Name', 'cb' ),
 		'singular_name'         => _x( 'Event', 'Post Type Singular Name', 'cb' ),
 		'menu_name'             => __( 'Events', 'cb' ),
@@ -137,16 +125,16 @@ function cb_register_cpt_event() {
 		'items_list'            => __( 'Events list', 'cb' ),
 		'items_list_navigation' => __( 'Events list navigation', 'cb' ),
 		'filter_items_list'     => __( 'Filter events list', 'cb' ),
-	);
-	$args = array(
+	];
+	$args = [
 		'label'                 => __( 'Event', 'cb' ),
 		'labels'                => $labels,
-		'supports'              => array( 'title', 'editor' ),
+		'supports'              => [ 'title', 'editor' ],
 		'hierarchical'          => false,
 		'public'                => true,
 		'show_ui'               => true,
 		'show_in_menu'          => true,
-		'menu_position'         => 5,
+		'menu_position'         => 25,
 		'menu_icon'             => 'dashicons-calendar-alt',
 		'show_in_admin_bar'     => true,
 		'show_in_nav_menus'     => true,
@@ -155,9 +143,44 @@ function cb_register_cpt_event() {
 		'exclude_from_search'   => true,
 		'publicly_queryable'    => true,
 		'capability_type'       => 'page',
-	);
+	];
 	register_post_type( 'event', $args );
 
 }
 
 add_action( 'init', 'cb_register_cpt_event', 0 );
+
+# # # # # # # # # # # # # # # # # # # #
+# ADMIN AREA ~ * ~ * ~ * ~ * ~ * ~ * ~
+# # # # # # # # # # # # # # # # # # # #
+
+function cb_remove_admin_menu_items () {
+	remove_menu_page( 'edit.php' );
+    remove_menu_page( 'edit-comments.php' );
+}
+
+add_action( 'admin_menu', 'cb_remove_admin_menu_items' );
+
+function cb_add_dashboard_widgets() {
+	wp_add_dashboard_widget(
+		'theme_widget',
+		'Crowdblink Theme',
+		'cb_theme_widget'
+	);
+}
+
+add_action( 'wp_dashboard_setup', 'cb_add_dashboard_widgets' );
+
+function cb_theme_widget() {
+	$theme = wp_get_theme();
+	echo "
+		<div style='text-align: center;'>
+			<img src='".DIR_URI."/images/crowdblink-logo.png' alt='Crowdblink' style='width: 200px; display: block; margin: 0 auto;' />
+			<p>v {$theme->get( 'Version' )}</p>
+			<h5 style='margin: 0;'><a href='/wp-admin/edit.php?post_type=page'>Edit Pages</a></h5>
+			<h5 style='margin: 0;'><a href='/wp-admin/edit.php?post_type=event'>Edit Events</a></h5>
+			<h5 style='margin: 0;'><a href='/wp-admin/customize.php?return=%2Fwp-admin%2Findex.php'>Edit Site Header</a></h5>
+			<h5 style='margin: 0;'><a href='/wp-admin/admin.php?page=acf-options-site-footer'>Edit Site Footer</a></h5>
+		</div>
+	";
+}

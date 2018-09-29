@@ -65,6 +65,17 @@
 		"oAP": "/header.php",
 		"oF": 0
 		},
+	"/images/crowdblink-logo.png": {
+		"ft": 32768,
+		"iS": 10360,
+		"oA": 0,
+		"oAP": "/images/crowdblink-logo.png",
+		"oF": 0,
+		"oIPL": 0,
+		"opt": 0,
+		"oT": 1,
+		"q": 100
+		},
 	"/images/default-background.jpg": {
 		"ft": 16384,
 		"iS": 188397,
@@ -187,19 +198,6 @@
 		"oS": 0,
 		"uL": 1
 		},
-	"/styles/_page-home.scss": {
-		"aP": 0,
-		"bl": 0,
-		"dP": 10,
-		"dS": 0,
-		"ft": 4,
-		"ma": 0,
-		"oA": 1,
-		"oAP": "/styles/_page-home.css",
-		"oF": 0,
-		"oS": 0,
-		"uL": 1
-		},
 	"/styles/_reboot.scss": {
 		"aP": 0,
 		"bl": 0,
@@ -209,19 +207,6 @@
 		"ma": 0,
 		"oA": 1,
 		"oAP": "/styles/_reboot.css",
-		"oF": 0,
-		"oS": 0,
-		"uL": 1
-		},
-	"/styles/_template-search.scss": {
-		"aP": 0,
-		"bl": 0,
-		"dP": 10,
-		"dS": 0,
-		"ft": 4,
-		"ma": 0,
-		"oA": 1,
-		"oAP": "/styles/_template-search.css",
 		"oF": 0,
 		"oS": 0,
 		"uL": 1
@@ -326,6 +311,32 @@
 		"ma": 0,
 		"oA": 1,
 		"oAP": "/styles/components/_slider.css",
+		"oF": 0,
+		"oS": 0,
+		"uL": 1
+		},
+	"/styles/pages/_page-home.scss": {
+		"aP": 0,
+		"bl": 0,
+		"dP": 10,
+		"dS": 0,
+		"ft": 4,
+		"ma": 0,
+		"oA": 1,
+		"oAP": "/styles/pages/_page-home.css",
+		"oF": 0,
+		"oS": 0,
+		"uL": 1
+		},
+	"/styles/pages/_template-search.scss": {
+		"aP": 0,
+		"bl": 0,
+		"dP": 10,
+		"dS": 0,
+		"ft": 4,
+		"ma": 0,
+		"oA": 1,
+		"oAP": "/styles/pages/_template-search.css",
 		"oF": 0,
 		"oS": 0,
 		"uL": 1

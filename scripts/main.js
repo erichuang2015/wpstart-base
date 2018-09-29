@@ -19,8 +19,13 @@
 	});
 
 	// card links 
-	$('.card[data-card-link]').on('click', function (e) {
+	$('[data-card-link]').on('click', function (e) {
 		window.location.href = $(this).data('card-link');
+	});
+
+	// toggle class
+	$('[data-toggle-class]').on('click', function () {
+		$($(this).data('toggle-target')).toggleClass($(this).data('toggle-class'));
 	});
 
 }(jQuery));

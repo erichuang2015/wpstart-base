@@ -3,6 +3,9 @@
 		<div class="container">
 			{% block header %}
 				<h1>{{ page_title }}</h1>
+				{% if post.subtitle %}
+					<h2 class="subtitle">{{ post.subtitle }}</h2>
+				{% endif %}
 			{% endblock %}
 		</div>
 	</header>

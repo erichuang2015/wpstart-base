@@ -1,7 +1,11 @@
 body.search {
 
+	main {
+		min-height: 600px;
+	}
+
 	.event-results {
-		padding: 1.5rem 0;
+		padding: 0 0 2.5rem;
 
 		.event-card {
 			margin-bottom: 2.5rem;

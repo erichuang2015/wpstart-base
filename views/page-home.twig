@@ -31,20 +31,28 @@
 			<div class="steps-images">
 				<div class="row">
 					<div class="col-3">
-						<img src="{{ TimberImage(post.get_field('step_1_image')).src }}" alt="">
+						{{ post.steps_link ? '<a href="' ~ post.steps_link ~ '">' }}
+							<img src="{{ TimberImage(post.get_field('step_1_image')).src }}" alt="">
+						{{ post.steps_link ? '</a>' }}
 					</div>
 					<div class="col-3">
-						<img src="{{ TimberImage(post.get_field('step_2_image')).src }}" alt="">
+						{{ post.steps_link ? '<a href="' ~ post.steps_link ~ '">' }}
+							<img src="{{ TimberImage(post.get_field('step_2_image')).src }}" alt="">
+						{{ post.steps_link ? '</a>' }}
 					</div>
 					<div class="col-3">
-						<img src="{{ TimberImage(post.get_field('step_3_image')).src }}" alt="">
+						{{ post.steps_link ? '<a href="' ~ post.steps_link ~ '">' }}
+							<img src="{{ TimberImage(post.get_field('step_3_image')).src }}" alt="">
+						{{ post.steps_link ? '</a>' }}
 					</div>
 					<div class="col-3">
-						<img src="{{ TimberImage(post.get_field('step_4_image')).src }}" alt="">
+						{{ post.steps_link ? '<a href="' ~ post.steps_link ~ '">' }}
+							<img src="{{ TimberImage(post.get_field('step_4_image')).src }}" alt="">
+						{{ post.steps_link ? '</a>' }}
 					</div>
 				</div>
 			</div>
-			<div class="steps-text">
+			<div class="steps-text" {{ post.steps_link ? 'data-card-link="' ~ post.steps_link ~ '"' }}>
 				<div class="row">
 					<div class="col-6 col-md-3">
 						<h5>Step 1</h5>

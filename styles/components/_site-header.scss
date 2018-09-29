@@ -212,7 +212,29 @@ $header-border-color: $gray-200;
 				a {
 					@include cyan-gradient();
 					color: white;
+					position: relative;
 				}
+
+				a:after {
+					content: '';
+					position: absolute;
+					top: 0;
+					left: 0;
+					width: 0;
+					height: 100%;
+					background-color: rgba(255,255,255,0.4);
+					  -webkit-transition: none;
+						 -moz-transition: none;
+							  transition: none;
+				  }
+
+				  a:hover:after {
+					width: 120%;
+					background-color: rgba(255,255,255,0);
+					  -webkit-transition: all 0.4s ease-in-out;
+						 -moz-transition: all 0.4s ease-in-out;
+							  transition: all 0.4s ease-in-out;
+				  }
 
 			}
 

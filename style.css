@@ -3941,6 +3941,10 @@ main h1, main h2, main h3, main h4, main h5, main h6,
 main .h1, main .h2, main .h3, main .h4, main .h5, main .h6 {
   clear: both; }
 
+main a:link {
+  font-weight: bold;
+  text-decoration: underline; }
+
 img {
   max-width: 100%; }
 
@@ -3979,11 +3983,6 @@ p .alignright {
 p .alignnone {
   float: none;
   display: block;
-  margin: 1.5rem 0; }
-
-p .size-full {
-  width: 100%;
-  height: auto;
   margin: 1.5rem 0; }
 
 .wp-caption {
@@ -4197,7 +4196,21 @@ blockquote {
           /* W3C, IE10+, FF16+, Chrome26+, Opera12+, Safari7+ */
           filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#37c5f5', endColorstr='#119ece',GradientType=1 );
           /* IE6-9 fallback on horizontal gradient */
-          color: white; }
+          color: white;
+          position: relative; }
+        .site-header .site-menu .menu-item.bg-blue a:after {
+          content: '';
+          position: absolute;
+          top: 0;
+          left: 0;
+          width: 0;
+          height: 100%;
+          background-color: rgba(255, 255, 255, 0.4);
+          transition: none; }
+        .site-header .site-menu .menu-item.bg-blue a:hover:after {
+          width: 120%;
+          background-color: rgba(255, 255, 255, 0);
+          transition: all 0.4s ease-in-out; }
       .site-header .site-menu .menu-item.mobile-menu-item {
         display: none; }
         @media (min-width: 992px) {
@@ -4207,11 +4220,15 @@ blockquote {
 .page-header {
   padding: 3rem 0;
   color: white;
-  margin-bottom: 1.5rem; }
+  margin-bottom: 3rem; }
   .page-header h1, .page-header h2, .page-header h3, .page-header h4, .page-header h5, .page-header h6,
   .page-header .h1, .page-header .h2, .page-header .h3, .page-header .h4, .page-header .h5, .page-header .h6 {
     margin: 0;
     line-height: 1.2; }
+  .page-header .subtitle {
+    font-size: 1rem;
+    max-width: 300px;
+    opacity: 0.666; }
 
 .slider .slide {
   position: relative; }
@@ -4377,24 +4394,103 @@ blockquote {
   background-position: center center;
   background-repeat: no-repeat;
   padding: 4.5rem 0;
-  color: white; }
+  color: white;
+  text-align: center;
+  position: relative; }
+  @media (min-width: 768px) {
+    .site-footer {
+      text-align: left; } }
+  .site-footer .footer-logo {
+    margin-bottom: 1.5rem; }
+    @media (min-width: 768px) {
+      .site-footer .footer-logo {
+        margin-bottom: 0; } }
+  .site-footer .col-apps {
+    position: static; }
   .site-footer .app {
-    display: inline-block;
+    display: block;
     text-align: center;
-    margin: 0 .75rem; }
+    margin: 1rem .75rem; }
+    @media (min-width: 768px) {
+      .site-footer .app {
+        display: inline-block;
+        margin: 1rem .5rem 0; } }
+    @media (min-width: 768px) {
+      .site-footer .app:last-child {
+        margin-right: 1.5rem; } }
     .site-footer .app .app-icon {
-      margin-bottom: .5rem;
+      margin-bottom: .333rem;
       height: 5.5rem;
-      width: auto; }
+      width: auto;
+      transition: -webkit-transform .25s ease-out;
+      transition: transform .25s ease-out;
+      transition: transform .25s ease-out, -webkit-transform .25s ease-out; }
+      .site-footer .app .app-icon:hover {
+        cursor: pointer;
+        -webkit-transform: scale(1.05);
+                transform: scale(1.05); }
     .site-footer .app .app-name {
       font-weight: normal;
       text-shadow: 1px 1px 2px black;
       font-size: .875rem;
-      letter-spacing: .075rem; }
+      letter-spacing: .075rem;
+      margin: 0; }
+    .site-footer .app.-open {
+      background: #343a40;
+      position: absolute;
+      top: 0;
+      right: 0;
+      bottom: 0;
+      left: 0; }
+  .site-footer .feature-list-accent {
+    display: block;
+    background-color: white;
+    height: 2px;
+    width: 100%;
+    position: relative;
+    box-shadow: 1px 1px 2px black;
+    margin: 1.5rem auto 2.5rem;
+    max-width: 300px; }
+    @media (min-width: 768px) {
+      .site-footer .feature-list-accent {
+        position: absolute;
+        top: -2rem;
+        bottom: -3rem;
+        left: 0;
+        width: 2px;
+        height: auto; } }
+    .site-footer .feature-list-accent:before, .site-footer .feature-list-accent:after {
+      content: '';
+      display: block;
+      width: 8px;
+      height: 8px;
+      border-radius: 8px;
+      background-color: white;
+      position: absolute;
+      top: -3px;
+      box-shadow: 1px 1px 2px black; }
+    .site-footer .feature-list-accent:before {
+      left: 0; }
+      @media (min-width: 768px) {
+        .site-footer .feature-list-accent:before {
+          top: 0;
+          left: -3px;
+          box-shadow: none; } }
+    .site-footer .feature-list-accent:after {
+      right: 0; }
+      @media (min-width: 768px) {
+        .site-footer .feature-list-accent:after {
+          right: auto;
+          top: auto;
+          bottom: 0;
+          left: -3px; } }
   .site-footer .feature-list {
     list-style: none;
     margin: 0;
     padding: 0; }
+    @media (min-width: 768px) {
+      .site-footer .feature-list {
+        padding: 0 0 0 1.5rem; } }
     .site-footer .feature-list .feature {
       font-family: Avenir, -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "Helvetica Neue", Arial, sans-serif, "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol";
       text-transform: uppercase;
@@ -4403,9 +4499,14 @@ blockquote {
       font-size: 0.785rem;
       margin-bottom: 1rem;
       text-shadow: 1px 2px 0px black; }
+    .site-footer .feature-list :last-child {
+      margin-bottom: 0; }
+
+body.search main {
+  min-height: 600px; }
 
 body.search .event-results {
-  padding: 1.5rem 0; }
+  padding: 0 0 2.5rem; }
   body.search .event-results .event-card {
     margin-bottom: 2.5rem; }
 
@@ -4415,6 +4516,9 @@ body.search .general-results {
     margin-bottom: 2.5rem; }
     body.search .general-results .card .read-more {
       display: none; }
+
+body.home .slider {
+  margin-bottom: -1px; }
 
 body.home section.content {
   padding: 4.5rem 0; }
@@ -4434,6 +4538,9 @@ body.home section.steps {
     body.home section.steps {
       padding: 3rem 0 0;
       margin: 0 0 3rem 0; } }
+  @media (min-width: 1200px) {
+    body.home section.steps .container {
+      max-width: 1060px; } }
   body.home section.steps h2.section-title {
     font-size: 2rem;
     line-height: 1.2;
@@ -4448,7 +4555,7 @@ body.home section.steps {
         font-size: 4rem; } }
     @media (min-width: 1200px) {
       body.home section.steps h2.section-title {
-        font-size: 4.2rem; } }
+        font-size: 4.5rem; } }
   body.home section.steps div.section-content {
     position: relative;
     z-index: 1;
@@ -4464,6 +4571,9 @@ body.home section.steps {
     display: flex;
     padding-right: 6px;
     padding-left: 6px; }
+  body.home section.steps div.steps-images a {
+    display: flex;
+    width: 100%; }
   body.home section.steps div.steps-images img {
     max-width: 100%;
     margin: 0 auto;
@@ -4485,11 +4595,23 @@ body.home section.steps {
     /* W3C, IE10+, FF16+, Chrome26+, Opera12+, Safari7+ */
     filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#37c5f5', endColorstr='#119ece',GradientType=1 );
     /* IE6-9 fallback on horizontal gradient */
-    padding: 15px; }
+    padding: 24px 18px 12px 18px;
+    transition: all .25s ease-out; }
+    @media (min-width: 768px) {
+      body.home section.steps div.steps-text {
+        padding: 22px 15px 18px; } }
+    body.home section.steps div.steps-text:hover {
+      -webkit-transform: scale(1.025);
+              transform: scale(1.025);
+      cursor: pointer; }
+      @media (min-width: 992px) {
+        body.home section.steps div.steps-text:hover {
+          -webkit-transform: scale(1.015);
+                  transform: scale(1.015); } }
     body.home section.steps div.steps-text h5 {
       color: #212529;
       font-weight: 600;
-      margin: 0; }
+      margin: 0 0 .25rem; }
       @media (min-width: 768px) {
         body.home section.steps div.steps-text h5 {
           font-size: 1rem; } }
@@ -4497,12 +4619,13 @@ body.home section.steps {
         body.home section.steps div.steps-text h5 {
           font-size: 1.25rem; } }
     body.home section.steps div.steps-text h6 {
+      font-size: 0.875rem;
       font-weight: normal;
-      margin: 0;
+      margin: 0 0 .5rem;
       line-break: 1.2; }
       @media (min-width: 768px) {
         body.home section.steps div.steps-text h6 {
-          font-size: 1rem; } }
+          margin: 0; } }
       @media (min-width: 992px) {
         body.home section.steps div.steps-text h6 {
           font-size: 1.25rem; } }

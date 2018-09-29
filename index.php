@@ -1,1 +1,1 @@
-<?php render_template( 'template-index' ); ?>
+<?php render_template( 'template-index' );
