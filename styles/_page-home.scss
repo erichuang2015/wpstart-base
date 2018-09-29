@@ -1,5 +1,14 @@
 body.home {
 
+	section.content {
+		padding: 4.5rem 0;
+
+		> .container > :last-child {
+			margin-bottom: 0;
+		}
+
+	}
+
 	section.steps {
 		background-color: $gray-900;
 		background-size: cover;
@@ -128,12 +137,7 @@ body.home {
 		}
 
 		.card {
-			margin-bottom: 1.5rem;
-
-			@include media-breakpoint-up(md) {
-				margin-bottom: 3rem;
-			}
-
+			margin-bottom: 2.5rem;
 		}
 
 	}

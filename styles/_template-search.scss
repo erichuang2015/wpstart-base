@@ -1,0 +1,26 @@
+body.search {
+
+	.event-results {
+		padding: 1.5rem 0;
+
+		.event-card {
+			margin-bottom: 2.5rem;
+		}
+
+	}
+
+	.general-results {
+		padding-bottom: 1.5rem;
+		
+		.card {
+			margin-bottom: 2.5rem;
+		
+			.read-more {
+				display: none;
+			}
+
+		}
+
+	}
+
+}

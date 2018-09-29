@@ -6,8 +6,16 @@ $header-border-color: $gray-200;
 	background-color: white;
 	overflow-y: hidden;
 
-	@include media-breakpoint-up(md) {
+	@include media-breakpoint-up(lg) {
 		height: $header-height;
+	}
+
+	> .container {
+		
+		@include media-breakpoint-down(sm) {
+			max-width: 100%;
+		}
+
 	}
 
 	.col-logo {
@@ -37,7 +45,7 @@ $header-border-color: $gray-200;
 		transition: transform $animation-speed;
 		z-index: 100;
 
-		@include media-breakpoint-up(md) {
+		@include media-breakpoint-up(lg) {
 			display: none;
 		}
 
@@ -86,7 +94,7 @@ $header-border-color: $gray-200;
 	.col-search {
 		border-top: 1px solid #EEE;
 
-		@include media-breakpoint-up(md) {
+		@include media-breakpoint-up(lg) {
 			border: none;
 		}
 
@@ -122,7 +130,7 @@ $header-border-color: $gray-200;
 
 	.col-menu {
 		
-		@include media-breakpoint-down(sm) {
+		@include media-breakpoint-down(md) {
 			padding-right: 0;
 		}
 
@@ -130,7 +138,7 @@ $header-border-color: $gray-200;
 
 	.site-menu-wrapper {
 
-		@include media-breakpoint-up(md) {
+		@include media-breakpoint-up(lg) {
 			float: right;
 		}
 
@@ -142,7 +150,7 @@ $header-border-color: $gray-200;
 		padding: 0;
 		margin: 0;
 
-		@include media-breakpoint-up(md) {
+		@include media-breakpoint-up(lg) {
 			width: auto;
 		}
 		
@@ -150,22 +158,34 @@ $header-border-color: $gray-200;
 			text-align: center;
 			width: 50%;
 			float: left;
-			border-right: 1px solid $header-border-color;
 			border-top: 1px solid $header-border-color;
 
-			@include media-breakpoint-up(md) {
+			&:nth-child(odd) {
+				border-right: 1px solid $header-border-color;
+			}
+
+			@include media-breakpoint-up(lg) {
 				text-align: left;
 				width: auto;
 				border-top: none;
+				border-right: 1px solid $header-border-color;
 			}
 
 			&:first-child {
-				border-left: 1px solid $header-border-color;
+				@include media-breakpoint-up(lg) {
+					border-left: 1px solid $header-border-color;
+				}
 			}
 
 			a {
-				display: block;
+				display: flex;
+				align-items: center;
+				justify-content: center;
+				text-align: center;
 				padding: 0 1.5rem;
+				line-height: 1.2;
+				height: 4rem;
+				display: flex;
 				text-transform: uppercase;
 				color: $gray-900;
 				font-size: 0.875rem;
@@ -199,17 +219,13 @@ $header-border-color: $gray-200;
 			&.mobile-menu-item {
 				display: none;
 
-				@include media-breakpoint-up(md) {
-					display: block;
+				@include media-breakpoint-up(lg) {
+					display: block !important;
 				}
 
 			}
 
 		}
-
-		// &.-toggled .menu-item.mobile-menu-item {
-		// 	display: block;
-		// }
 
 	}
 

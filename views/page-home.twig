@@ -16,7 +16,13 @@
 	</div>
 {% endif %}
 
-</section>
+{% if post.post_content|length > 0 %}
+	<section class="content">
+		<div class="container">
+			{{ post.content }}
+		</div>
+	</section>
+{% endif %}
 
 <section class="steps" {# data-parallax="scroll" data-image-src="{{ TimberImage(post.get_field('steps_background')).src }}" data-speed="0.85" #} style="background-image: url('{{ TimberImage(post.get_field('steps_background')).src }}');">
 	<div class="container">

@@ -30,7 +30,7 @@
 <header class="site-header">
 	<div class="container">
 		<div class="row">
-			<div class="col-6 col-md-auto col-logo">
+			<div class="col-6 col-lg-auto col-logo">
 				<a href="{{ site.url }}" class="site-logo">
 					{% if logo %}
 						<img src="{{ logo[0] }}" alt="{{ site.title }}" />
@@ -39,14 +39,14 @@
 					{% endif %}
 				</a> 
 			</div>
-			<div class="col-6 d-md-none">
+			<div class="col-6 d-lg-none">
 				<span class="nav-toggle">
 					<span></span>
 					<span></span>
 					<span></span>
 				</span>
 			</div>
-			<div class="col-12 col-md pr-md-0 col-search">  
+			<div class="col-12 col-lg pr-lg-0 col-search">  
 				<div class="site-search">
 					<i class="search-icon fas fa-search"></i>
 					<form action="{{ site.url }}" method="get">
@@ -54,7 +54,7 @@
 					</form>
 				</div>
 			</div>
-			<div class="col-12 col-md-auto pl-0 col-menu">
+			<div class="col-12 col-lg-auto pl-0 col-menu">
 				{% if menu|length > 0 %}
 					<nav class="site-menu-wrapper">
 						<ul class="menu site-menu">

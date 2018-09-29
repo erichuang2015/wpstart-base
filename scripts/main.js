@@ -18,4 +18,9 @@
 		speed: 600
 	});
 
+	// card links 
+	$('.card[data-card-link]').on('click', function (e) {
+		window.location.href = $(this).data('card-link');
+	});
+
 }(jQuery));
