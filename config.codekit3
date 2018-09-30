@@ -7,7 +7,7 @@
 		"uuidString": "0C6243F4-A769-45B7-BA9E-749CE5038FD0"
 		}
 	],
-"creatorBuild": "28815",
+"creatorBuild": "28901",
 "files": {
 	"/404.php": {
 		"cB": 0,
@@ -95,7 +95,40 @@
 		"oAP": "/images/default-thumbnail.jpg",
 		"oF": 0,
 		"oIPL": 0,
+		"opt": 1,
+		"q": 100
+		},
+	"/images/download-appstore.png": {
+		"ft": 32768,
+		"iS": 10816,
+		"oA": 0,
+		"oAP": "/images/download-appstore.png",
+		"oF": 0,
+		"oIPL": 0,
 		"opt": 0,
+		"oT": 1,
+		"q": 100
+		},
+	"/images/download-playstore.png": {
+		"ft": 32768,
+		"iS": 12130,
+		"oA": 0,
+		"oAP": "/images/download-playstore.png",
+		"oF": 0,
+		"oIPL": 0,
+		"opt": 0,
+		"oT": 1,
+		"q": 100
+		},
+	"/images/footer-background.jpg": {
+		"ft": 16384,
+		"iS": 147244,
+		"jF": 0,
+		"oA": 0,
+		"oAP": "/images/footer-background.jpg",
+		"oF": 0,
+		"oIPL": 0,
+		"opt": 1,
 		"q": 100
 		},
 	"/index.php": {

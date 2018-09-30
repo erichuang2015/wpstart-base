@@ -28,4 +28,13 @@
 		$($(this).data('toggle-target')).toggleClass($(this).data('toggle-class'));
 	});
 
+	$('.site-footer .app').on('click', function () {
+		$('.site-footer .app-download').each(function () {
+			$(this).hide();
+		});
+		$($(this).data('app-detail')).show();
+		$('.site-footer .sub-footer').slideDown();
+		$("html, body").animate({ scrollTop: $(document).height() }, 400);
+	});
+
 }(jQuery));

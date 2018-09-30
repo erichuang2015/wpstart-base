@@ -6,8 +6,8 @@
 					</div>
 					<div class="col-12 col-md-auto col-apps">
 						{% for app in apps %}
-							<div class="app" id="app-{{ loop.i }}">
-								<img class="app-icon" src="{{ TimberImage(app.icon).src }}" alt="{{ app.name }}" data-toggle-class="-open" data-toggle-target="#app-{{ loop.i }}" />
+							<div class="app" id="app-{{ loop.index }}" data-app-detail="#app-download-{{ loop.index }}">
+								<img class="app-icon" src="{{ TimberImage(app.icon).src }}" alt="{{ app.name }}" />
 								<h6 class="app-name">{{ app.name }}</h6>
 							</div>
 						{% endfor %}
@@ -20,6 +20,25 @@
 							{% endfor %}
 						</ul>
 					</div>
+				</div>
+			</div>
+			<div class="sub-footer">
+				<div class="container">
+					{% for app in apps %}
+						<div id="app-download-{{ loop.index }}" class="app-download" style="display: none;">
+							<h3 class="download-title">{{ app.download_type == 'stores' ? 'Download' : 'Open' }} the {{ app.name }} App</h3>
+							{% if app.download_type == 'stores' %}
+								<a href="{{ app.ios_link }}" target="_blank">
+									<img src="{{ theme.link }}/images/download-appstore.png" alt="Download {{ app.name }}" class="download-link" />
+								</a>
+								<a href="{{ app.android_link }}" target="_blank">
+									<img src="{{ theme.link }}/images/download-playstore.png" alt="Download {{ app.name }}" class="download-link" />
+								</a>
+							{% else %}
+								<a href="{{ app.download_link }}" class="btn btn-primary download-link" target="_blank">Open the App</a>
+							{% endif %}
+						</div>
+					{% endfor %}
 				</div>
 			</div>
         </footer>

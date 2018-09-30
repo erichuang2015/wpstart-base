@@ -115,6 +115,24 @@ main a:link {
 img {
   max-width: 100%; }
 
+.btn {
+  font-family: Avenir, -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "Helvetica Neue", Arial, sans-serif, "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol";
+  text-transform: uppercase;
+  border-radius: 0; }
+
+.btn-primary {
+  background: #2FBCEC;
+  /* Old browsers */
+  background: -moz-linear-gradient(-45deg, #37c5f5 41%, #119ece 100%);
+  /* FF3.6-15 */
+  background: -webkit-linear-gradient(-45deg, #37c5f5 41%, #119ece 100%);
+  /* Chrome10-25,Safari5.1-6 */
+  background: linear-gradient(165deg, #37c5f5 20%, #119ece 100%);
+  /* W3C, IE10+, FF16+, Chrome26+, Opera12+, Safari7+ */
+  filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#37c5f5', endColorstr='#119ece',GradientType=1 );
+  /* IE6-9 fallback on horizontal gradient */
+  color: white; }
+
 .alignleft {
   float: left;
   margin: 0 1rem 1.5rem 0; }

@@ -1,9 +1,9 @@
 .site-footer {
-	background-image: url('images/default-background.jpg');
+	background-image: url('images/footer-background.jpg');
 	background-size: cover;
-	background-position: center center;
+	background-position: bottom center;
 	background-repeat: no-repeat;
-	padding: 4.5rem 0;
+	padding: 4.5rem 0 0;
 	color: white;
 	text-align: center;
 	position: relative;
@@ -12,8 +12,14 @@
 		text-align: left;
 	}
 
+	> .container {
+		padding-bottom: 4.5rem;
+	}
+
 	.footer-logo {
 		margin-bottom: 1.5rem;
+		height: 4rem;
+		width: auto;
 
 		@include media-breakpoint-up(md) {
 			margin-bottom: 0;
@@ -30,7 +36,7 @@
 		text-align: center;
 		margin: 1rem .75rem;
 
-		@include media-breakpoint-up(md) {
+		@include media-breakpoint-up(sm) {
 			display: inline-block;
 			margin: 1rem .5rem 0;
 		}
@@ -145,6 +151,25 @@
 
 		:last-child {
 			margin-bottom: 0;
+		}
+
+	}
+
+	.sub-footer {
+		display: none;
+		background: rgba(0,0,0,0.6);
+		padding: 3rem 1.5rem;
+		margin-top: -1.5rem;
+		text-align: center;
+
+		.download-title {
+			margin: 0;
+		}
+
+		.download-link {
+			display: inline-block;
+			width: 160px;
+			margin: 1rem .5rem 0;
 		}
 
 	}

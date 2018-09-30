@@ -28,6 +28,17 @@ img {
 	max-width: 100%;
 }
 
+.btn {
+	font-family: $headings-font-family;
+	text-transform: uppercase;
+	border-radius: 0;
+}
+
+.btn-primary {
+	@include cyan-gradient();
+	color: white;
+}
+
 // Default WP Alignment Classes
 
 .alignleft {
